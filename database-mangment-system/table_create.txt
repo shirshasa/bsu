@@ -1,0 +1,60 @@
+CREATE TABLE conference 
+( id number(10) NOT NULL, section_id number(10) NOT NULL, CONSTRAINT conference_pk PRIMARY KEY (id) );
+
+CREATE TABLE section  
+( id number(10) NOT NULL, section_name varchar2(100) NOT NULL, section_description varchar2(100) NOT NULL,
+ CONSTRAINT section_pk PRIMARY KEY (id) );
+
+CREATE TABLE meeting 
+( id number(10) NOT NULL, meeting_date date NOT NULL, meeting_start_time timestamp NOT NULL, section_id number(10) NOT NULL, 
+meeting_end_time timestamp NOT NULL, CONSTRAINT meeting_pk PRIMARY KEY (id) );
+
+CREATE TABLE conference_roles 
+( id number(10) NOT NULL, participant smallint NOT NULL, section_chair smallint NOT NULL, organizer smallint NOT NULL, 
+ reporter smallint NOT NULL, CONSTRAINT conference_roles_pk PRIMARY KEY (id) );
+
+CREATE TABLE events 
+( meeting_id number(10) NOT NULL, id number(10) NOT NULL, start_time timestamp NOT NULL, 
+ metting_name varchar2(18) NOT NULL, end_time timestamp NOT NULL, event_name varchar2(18) NOT NULL,
+ CONSTRAINT events_pk PRIMARY KEY (id) );
+
+CREATE TABLE participant  
+( id number(10) NOT NULL, first_name varchar2(128) NOT NULL, last_name varchar2(128) NOT NULL, 
+ company_name varchar2(128) NOT NULL, participant_position varchar2(128) NOT NULL,  
+participant_address varchar2(128) NOT NULL, participant_email varchar2(120) NOT NULL, current_adress varchar2(128) NOT NULL, 
+ conference_roles_id number(10) NOT NULL, CONSTRAINT participant_pk PRIMARY KEY (id) );
+
+CREATE TABLE coallition 
+( id number(10) NOT NULL,
+ participant_id number(10) NOT NULL,
+ coallition_number number(10) NOT NULL,
+ is_reporter number(1) NOT NULL,
+ CONSTRAINT coallition_pk PRIMARY KEY (id) );
+
+CREATE TABLE paper 
+( id number(10) NOT NULL,
+ paper_name varchar2(100) NOT NULL,
+ paper_summary varchar2(300) NOT NULL, 
+ meeting_id number(10) NOT NULL,
+ coallition_number number(10) NOT NULL,
+ CONSTRAINT paper_pk PRIMARY KEY (id) );
+
+ALTER TABLE coallition ADD CONSTRAINT coallition_participant FOREIGN KEY (participant_id) REFERENCES participant (id);
+ALTER TABLE events ADD CONSTRAINT events_meeting FOREIGN KEY (meeting_id) REFERENCES meeting (id);
+
+
+ALTER TABLE paper ADD CONSTRAINT paper_meeting FOREIGN KEY (meeting_id) REFERENCES meeting (id);
+ALTER TABLE paper ADD CONSTRAINT paper_participant FOREIGN KEY (reporter_id) REFERENCES participant (id);
+
+ALTER TABLE participant ADD CONSTRAINT conference_roles FOREIGN KEY (conference_roles_id) REFERENCES conference_roles (id);
+ALTER TABLE meeting ADD CONSTRAINT session_section FOREIGN KEY (section_id) REFERENCES section (id);
+
+
+
+
+
+
+
+
+
+

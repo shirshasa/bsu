@@ -1,0 +1,359 @@
+INSERT INTO section VALUES (11,'it в огороде', 'Новые технологии на белорусской земле');
+INSERT INTO section VALUES (12,'этика в огороде', 'Рассмотрим красоту и мораль');
+INSERT INTO section VALUES (13,'арт объект в саду и огороде', 'Обсудим инсталяции и визуализации в огороде и поле');
+INSERT INTO section VALUES (14,'архитектурный огород', 'Деревянные дома XX века обретут современные функции.');
+INSERT INTO section VALUES (15,'ягоды и кусты', 'Малина,крыжовник,клубника,голубика.');
+INSERT INTO section VALUES (16,'готовимся к зиме', 'Теплицы,окучивания,закатки.');
+
+INSERT INTO conference_roles( id , participant, section_chair, organizer,reporter) VALUES (1000, 1,0,0,0);
+INSERT INTO conference_roles( id , participant, section_chair, organizer,reporter) VALUES (1100, 1,1,0,0);
+INSERT INTO conference_roles( id , participant, section_chair, organizer,reporter) VALUES (1010, 1,0,1,0);
+INSERT INTO conference_roles( id , participant, section_chair, organizer,reporter) VALUES (1001, 1,0,0,1);
+INSERT INTO conference_roles( id , participant, section_chair, organizer,reporter) VALUES (1110, 1,1,1,0);
+INSERT INTO conference_roles( id , participant, section_chair, organizer,reporter) VALUES (1011, 1,0,1,1);
+INSERT INTO conference_roles( id , participant, section_chair, organizer,reporter) VALUES (1101, 1,1,0,1);
+INSERT INTO conference_roles( id , participant, section_chair, organizer,reporter) VALUES (1111, 1,1,1,1);
+
+
+
+insert into meeting values(
+1102,
+TO_DATE('2019-11-02', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-02 8:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+11,
+TO_TIMESTAMP ('19-Nov-02 18:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+insert into meeting values(
+1103,
+TO_DATE('2019-11-03', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-03 8:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+11,
+TO_TIMESTAMP ('19-Nov-03 18:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+insert into meeting values(
+1104,
+TO_DATE('2019-11-04', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-04 8:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+11,
+TO_TIMESTAMP ('19-Nov-04 18:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+insert into meeting values(
+1105,
+TO_DATE('2019-11-05', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-05 8:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+11,
+TO_TIMESTAMP ('19-Nov-05 18:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+
+
+insert into meeting values(
+1302,
+TO_DATE('2019-11-02', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-02 10:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+13,
+TO_TIMESTAMP ('19-Nov-02 15:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+insert into meeting values(
+1303,
+TO_DATE('2019-11-03', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-03 10:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+13,
+TO_TIMESTAMP ('19-Nov-03 15:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+insert into meeting values(
+1304,
+TO_DATE('2019-11-04', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-04 10:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+13,
+TO_TIMESTAMP ('19-Nov-04 15:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+insert into meeting values(
+1305,
+TO_DATE('2019-11-05', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-05 10:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+13,
+TO_TIMESTAMP ('19-Nov-05 15:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+insert into meeting values(
+1402,
+TO_DATE('2019-11-02', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-02 10:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+14,
+TO_TIMESTAMP ('19-Nov-02 15:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+insert into meeting values(
+1403,
+TO_DATE('2019-11-03', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-03 10:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+14,
+TO_TIMESTAMP ('19-Nov-03 15:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+insert into meeting values(
+1404,
+TO_DATE('2019-11-04', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-04 10:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+14,
+TO_TIMESTAMP ('19-Nov-04 15:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+insert into meeting values(
+1405,
+TO_DATE('2019-11-01', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-01 10:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+14,
+TO_TIMESTAMP ('19-Nov-01 15:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+
+insert into meeting values(
+1502,
+TO_DATE('2019-11-02', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-02 18:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+15,
+TO_TIMESTAMP ('19-Nov-02 21:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+insert into meeting values(
+1503,
+TO_DATE('2019-11-03', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-03 18:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+15,
+TO_TIMESTAMP ('19-Nov-03 21:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+insert into meeting values(
+1504,
+TO_DATE('2019-11-04', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-04 18:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+15,
+TO_TIMESTAMP ('19-Nov-04 21:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+insert into meeting values(
+1505,
+TO_DATE('2019-11-01', 'YYYY-MM-DD'),
+TO_TIMESTAMP ('19-Nov-01 18:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')  ,
+15,
+TO_TIMESTAMP ('19-Nov-01 21:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF') );
+
+
+
+INSERT INTO participant
+VALUES (1,'Иван','Соколовский', 'ОАО Молодечноогород','тракторист', 'г.Молодечно', 'ogorod@gmail.com','Гостиница Звезда',
+1010);
+INSERT INTO participant VALUES (2,'Мария','Белая', 'ОАО Молодечноогород','старшая по огороду', 'г.Молодечно', 'ogorod_glav@gmail.com',' Гостиница Звезда',
+1010);
+INSERT INTO participant VALUES (3,'Семен','Твардовский', 'ОАО Молодечноогород','директор', 'г.Молодечно',  'ogorod_director@gmail.com','Гостиница Звезда',
+1110);
+INSERT INTO participant VALUES (4,'Павел','Дубков', 'ОАО Горсельмаш','директор', 'г.Глубокое', 'glubokoe@mail.ru','Отель Минск',
+1000);
+
+INSERT INTO participant
+VALUES (5,'Игорь','Дубров','ЗеленыйЧерный','главный по саду', 'г.Борбруйск', 'bobr@mail.ru','Ренессанс Минск Отель',
+1001);
+
+INSERT INTO participant
+VALUES (6, 'Степанида','Ореховая', 'ООО Лесной черт', 'лесничая',  'г. Могилев', 'forestgamp@mail.ru', ' Гостиница Звезда',
+1000);
+
+INSERT INTO participant
+VALUES (7,'Томара','Брагушевич','ООО восточный сад','огородница', 'г.Львов', 'sad@mail.com','Гостиница Звезда',
+1100);
+
+INSERT INTO participant
+VALUES (8,'Мария','Голубкова','ИП ФанипольЛес','лесничая', 'г.Фаниполь', 'les@mail.com','Отель Минск',
+1001);
+
+
+INSERT INTO participant
+VALUES (9, 'Петр','Первый','ООО огород', 'тракторис',  'г. Луганск', 'fo33333p@mail.ru', 'Гостиница Звезда',
+1101);
+
+INSERT INTO participant
+VALUES (10, 'Петр','Второй','ООО огород', 'директор',  'г. Луганск', 'dom5@mail.ru', 'Гостиница Звезда',
+1100);
+
+INSERT INTO participant
+VALUES (11, 'Екатерина',  'Другая','ООО лес', 'лесничая',  'г. Луганск', 'forest123@mail.ru', 'Гостиница Звезда',
+1010);
+
+INSERT INTO participant
+VALUES (12, 'Иван','Замятин','ООО белаз', 'зав огорода',  'г. Жодино', 'belaz@mail.ru', 'Ренессанс Минск Отель',
+1001);
+
+INSERT INTO participant
+VALUES (13, 'Сергей','Замятин','ООО белаз', 'зав сада',  'г. Жодино', 'belaz2@mail.ru', 'Ренессанс Минск Отель',
+1000);
+
+INSERT INTO participant
+VALUES (14, 'Максим','Замятин','ООО белаз', 'директор',  'г. Жодино', 'belaz3@mail.ru', 'Ренессанс Минск Отель',
+1010);
+
+INSERT INTO participant
+VALUES (15, 'Михаил','Замятин','ООО белаз', 'зам директора',  'г. Жодино', 'bel4@mail.ru', 'Ренессанс Минск Отель',
+1100);
+
+INSERT INTO participant
+VALUES (16, 'Михаил','Белов','ООО молодечномебель', 'зам директора',  'г. Молодечно', 'bel@mail.ru', 'ОТЕЛЬ ОРБИТА МИНСК',
+1000);
+
+INSERT INTO participant
+VALUES (17, 'Алексей','Славянский','ООО застройкаИП', 'главный по луку',  'г. Молодечно', 'onion@mail.ru', 'ОТЕЛЬ ОРБИТА МИНСК',
+1001);
+
+INSERT INTO participant
+VALUES (18, 'Елена','Гришанович','ИП', 'комбайнерша',  'г. Слуцк', 'paprika@mail.ru', ' Гостиница Звезда',
+1001);
+
+INSERT INTO participant
+VALUES (19, 'Алексей','Старинский','ИП', 'главный по даче',  'г. Слуцк', 'onion@mail.ru', ' Гостиница Звезда',
+1001);
+
+INSERT INTO participant
+VALUES (20, 'Иван','Грозный','ООО завод', 'тракторист',  'г. Брест', 'onion@mail.ru', 'Хостел 2',
+1001);
+
+INSERT INTO participant
+VALUES (21,'Иван','Соколовский','ОАО Витебскогород','тракторист', 'г.Витебск', 'gorodrek@gmail.com','Хостел 1',
+1001);
+INSERT INTO participant
+VALUES (22,'Мария','Кравирова','ОАО Оршасад','старшая по огороду', 'г.Орша', 'sadiogorod@gmail.com','Отель Виктория',
+1001);
+INSERT INTO participant
+VALUES (23,'Арсений','Тарковский','ОООмолодость','директор', 'г.Москва', 'ogorod_director@gmail.com','Отель Виктория',
+1001);
+INSERT INTO participant
+VALUES (24,'Александр','Дугин','ОАО первыйинтернационал','директор', 'г.Москва', 'duginov@mail.ru','Отель Виктория',
+1100);
+
+INSERT INTO participant
+VALUES (25,'Эдуард','Лимонов','ОАО красота','главный по саду', 'г.Москва', 'limonka@mail.ru','Отель Виктория',
+1001);
+
+INSERT INTO participant
+VALUES (26, 'Наталья','Медведева','ООО Лесная', 'лесничая',  'г. Липецк', 'medved@gmail.ru', 'Гостиница Звезда',
+1001);
+
+INSERT INTO participant
+VALUES (27,'Ирина','Савицкая','ООО восточный сад','огородница', 'г.Орел', 'vostok67@mail.com','Хостел 1',1001);
+
+INSERT INTO participant
+VALUES (28,'Любовь','Емельянова','ТЦ гладкий','лесничая', 'г.Екатеренбург', 'les_ekater@mail.com','Хотстел 1',1001);
+INSERT INTO participant
+VALUES (29, 'Петр','Седьмой','ООО огород', 'тракторис',  'г. Киев', 'kiev9304@mail.ru', 'ОТЕЛЬ ОРБИТА МИНСК',
+1100);
+INSERT INTO participant
+VALUES (30, 'Олег','Петрович','ООО огород', 'директор',  'г. Луганск', 'dom5@mail.ru', 'Гостиница Звезда',
+1011);
+
+
+
+INSERT INTO coallition VALUES (11,5,1111,1);
+INSERT INTO coallition VALUES (12,4,1111,0);
+
+INSERT INTO coallition VALUES (21,8,2222,1);
+INSERT INTO coallition VALUES (22,6,2222,0);
+
+INSERT INTO coallition VALUES (31,13,3333,1);
+INSERT INTO coallition VALUES (32,12,3333,0);
+
+INSERT INTO coallition VALUES (41,16, 4444,1);
+INSERT INTO coallition VALUES (42,17, 4444,0);
+
+INSERT INTO coallition VALUES (51,18, 5555,1);
+INSERT INTO coallition VALUES (52,19, 5555,0);
+INSERT INTO coallition VALUES (53,26, 5555,0);
+INSERT INTO coallition VALUES (54,28, 5555,0);
+
+INSERT INTO coallition VALUES (61, 7, 6666,1);
+INSERT INTO coallition VALUES (62,29, 6666,0);
+INSERT INTO coallition VALUES (63,10, 6666,0);
+
+INSERT INTO coallition VALUES (71,10, 7777,1);
+INSERT INTO coallition VALUES (72,24, 7777,0);
+INSERT INTO coallition VALUES (73,15, 7777,0);
+
+
+
+INSERT INTO coallition VALUES(2, 20, 2000,1);
+INSERT INTO coallition VALUES(1, 21, 1000,1);
+INSERT INTO coallition VALUES (3, 22, 3000,1);
+INSERT INTO coallition VALUES (4, 23, 4000,1);
+INSERT INTO coallition VALUES (5, 25, 5000,1);
+INSERT INTO coallition VALUES (6, 26, 6000,1);
+INSERT INTO coallition VALUES (7, 27, 7000,1);
+INSERT INTO coallition VALUES (8, 28, 8000,1);
+INSERT INTO coallition VALUES (9, 30, 9000,1);
+
+
+
+
+
+insert into paper values(1,'модулярный синтезатор ','модулярный синтезатор в каждый клуб художественной самодеятельности',1102,1000);
+insert into paper values(2,'кроты и компьютер ','как с помощью крота проложить оптоволокно',1103,2000);
+insert into paper values(3,'вай фай ','плохая проводимость вай фай сети',1104,3000);
+insert into paper values(4,'ультрозвуковая очистка','очистка изображений на крышках от бутылок',1105,4000);
+insert into paper values(9,'прокладывание дорожек ','использование машинного обучения',1102,2000);
+insert into paper values(10,'компьютерная игра с навозом 1 ','корова и луг',1103,3000);
+insert into paper values(11,' видеоряд ','хлев для лошади',1104,3000);
+insert into paper values(12,'интернет','лес у болота и wi-fi',1105,1111);
+
+
+insert into paper values(25,'ежи ','бояться ли ежи щекотки',1302,5000);
+insert into paper values(26,'инсталяция 1 ','корова и луг',1303,6000);
+insert into paper values(27,'инсталяция и видеоряд ','хлев для лошади',1304,7000);
+insert into paper values(28,'инсталяция 3 ','лес у болота',1305,8000);
+
+insert into paper values(29,'клубника и кролики ','хватит столько есть',1302,1000);
+insert into paper values(30,'фотоинсталяция 1 ','что лучше на даче спать или есть',1303,6000);
+insert into paper values(31,'импровизация и видеоряд ','хлев для парасюка',1304,7000);
+insert into paper values(32,'стол и стул 3 ','стол на болоте',1305,8000);
+
+
+insert into paper values(13,'камень','модулярный синтезатор в каждый клуб художественной самодеятельности',1402,1000);
+insert into paper values(14,'дерево ','как с помощью крота проложить оптоволокно',1403,9000);
+insert into paper values(15,'колодец ','модулярный синтезатор в каждый клуб художественной самодеятельности',1404,3000);
+insert into paper values(16,'лавочка или скамья ','модулярный синтезатор в каждый клуб художественной самодеятельности',1405,5000);
+
+insert into paper values(17,'закатки ','из огурцов и грибов',1502,5000);
+insert into paper values(18,'теплицы ','из пенопласта',1503,6000);
+insert into paper values(19,'окучивания ','тяпкой и молотком',1504,7000);
+
+insert into paper values(20,'ограда у сада','зубчатая или полосная,разноцветная или из камня',1505,8000);
+insert into paper values(21,'закатки ','из огурцов и грибов',1502,2222);
+insert into paper values(22,'теплицы ','из пенопласта',1503,3333);
+insert into paper values(23,'окучивания ','тяпкой и молотком',1504,4444);
+insert into paper values(24,'ограда у сада','зубчатая или полосная,разноцветная или из камня',1505,5555);
+
+insert into paper values(21,'закатки ','из огурцов и грибов',1502,2222);
+insert into paper values(22,'теплицы ','из пенопласта',1503,3333);
+insert into paper values(23,'окучивания ','тяпкой и молотком',1504,4444);
+insert into paper values(24,'ограда у сада','зубчатая или полосная,разноцветная или из камня',1505,5555);
+insert into paper values(33,'закатки 2 ','из огурцов и грибов',1502,2222);
+insert into paper values(34,'теплицы 100 ','из пенопласта',1503,3333);
+insert into paper values(35,'окучивания из пенопласта','тяпкой и молотком',1504,4444);
+insert into paper values(36,'ограда у сада 2','зубчатая или полосная,разноцветная или из камня',1505,5555);
+
+insert into paper values(37,'рубрика: о чем поговорим зимой','о Лимонове',1502,2222);
+insert into paper values(38,'рубрика: о чем поговорим зимой','о Дуде',1503,3333);
+insert into paper values(39,'рубрика: о чем поговорим зимой','о Лермонтовете',1504,4444);
+insert into paper values(40,'рубрика: о чем поговорим зимой','о Луне',1505,5555);
+
+insert into paper values(41,'дневник домоседа','дом работа дома',1502,1111);
+insert into paper values(42,'дневник лесника','лес работа лес',1503,3333);
+insert into paper values(43,'дневник колхозника','колхоз колхоз профсоюз',1504,4444);
+insert into paper values(44,'дневник садового','бабочки цветы ростки',1505,5555);
+
+
+
+
+
+
+
+

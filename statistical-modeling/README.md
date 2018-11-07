@@ -1,9 +1,9 @@
 Statistical Modeling
--------------------------------------------------
+--------------------------------------
 
-Имитационное и статистическое моделирование
+Иммитационное и статистическое моделирование
 
-- [lab1](https://github.com/shirshasa/bsu/tree/master/statistical-modeling/lab1) -
-  Моделирование базовых случайных величин
+- [lab1] (https://github.com/shirshasa/bsu/tree/master/statistical-modeling/lab1) -
+Моделирование БСВ
 - [lab2](https://github.com/shirshasa/bsu/tree/master/statistical-modeling/lab1) -
-  Моделирование дискретных случайных величин
+Моделирование ДСВ

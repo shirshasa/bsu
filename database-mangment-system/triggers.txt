@@ -1,0 +1,127 @@
+
+
+--1. Триггер должен отслеживать, чтобы доклады одного участника (участников), поданные в одну и ту же секцию, попадали в одно заседание секции;
+CREATE OR REPLACE TRIGGER trigger_task1
+BEFORE INSERT OR UPDATE ON paper
+FOR EACH ROW
+DECLARE
+  need_meeting_id INTEGER;
+  cur_section INTEGER;
+  
+BEGIN
+  SELECT section_id into cur_section from meeting where id = :new.meeting_id;
+  
+  SELECT COALESCE(min(meeting_id),0)  into need_meeting_id from paper 
+                                        join meeting on paper.meeting_id = meeting.id
+                                        where paper.coallition_number =:new.coallition_number and meeting.section_id = cur_section
+                                        group by coallition_number, section_id;
+  EXCEPTION
+      WHEN NO_DATA_FOUND THEN
+        need_meeting_id := -1;
+
+  
+  IF (need_meeting_id  != -1 and :new.meeting_id != need_meeting_id)
+  THEN :new.meeting_id := need_meeting_id;
+  END IF;
+
+END;
+/
+
+insert into paper values(140004,'тест','тест',1404,2000);
+select * from paper where id = 140004 order by meeting_id ;
+
+select * from paper order by coallition_number;
+
+
+
+
+
+-- 2.Триггер должен запрещать внесение в заседание доклада, не приехавшего участника (участников);
+
+CREATE OR REPLACE TRIGGER trigger_task2
+BEFORE INSERT OR UPDATE ON paper
+FOR EACH ROW
+DECLARE
+  cur_adr STRING(1000);
+  
+BEGIN
+  select min( CURRENT_ADRESS) into cur_adr from participant join coallition
+                                        on participant.id =coallition.PARTICIPANT_ID
+                                        where (coallition.COALLITION_NUMBER = :new.COALLITION_NUMBER and coallition.is_reporter = 1);
+
+
+  IF (LENGTH(cur_adr) is NULL)
+  THEN  RAISE_APPLICATION_ERROR(-20000, 'participant did not arive !!!!!!!!!!!!!!!!!!!!' );
+  END IF;
+
+END;
+/
+
+
+
+
+
+
+
+select * from participant join coallition on participant.id = coallition.PARTICIPANT_ID
+                          where  CURRENT_ADRESS is NULL;
+  
+
+--select * from participant join coallition on participant.id = coallition.PARTICIPANT_ID
+--                          where  CURRENT_ADRESS is not NULL;
+ 
+insert into paper values(444,'test','test',1505,1111);
+insert into paper values(4444,'test','test',1505,4444);
+
+insert into paper values(3330,'good test','test',1505,6666);
+insert into paper values(33330,'good test','test',1505,7000);
+
+select * from paper where id in (333,3333);
+
+select * from paper where id in (444, 4444);
+
+
+--3. Триггер должен запрещать включение в заседание более 24 докладов.
+
+select count(*) as count_,meeting_id from paper group by meeting_id order by count_ ;
+
+CREATE OR REPLACE TRIGGER trigger_task3
+BEFORE INSERT OR UPDATE ON paper
+FOR EACH ROW
+DECLARE
+  cur_amount INTEGER;
+  
+BEGIN
+  select count(*) into cur_amount from paper where paper.meeting_id = :new.meeting_id group by meeting_id;
+
+
+  IF (cur_amount >= 24)
+  THEN  RAISE_APPLICATION_ERROR(-20000, 'too much papers in this meeting. chose anoither one !!!!!!!!!!!!!!!!!!!!' );
+  END IF;
+
+END;
+/
+insert into paper values(45,'test','test',1505,5555);
+insert into paper values(46,'test','test',1505,5555);
+insert into paper values(47,'test','test',1505,5555);
+insert into paper values(48,'test','test',1505,5555);
+insert into paper values(49,'test','test',1505,5555);
+insert into paper values(50,'test','test',1505,5555);
+insert into paper values(51,'test','test',1505,5555);
+insert into paper values(52,'test','test',1505,5555);
+insert into paper values(53,'test','test',1505,5555);
+insert into paper values(54,'test','test',1505,5555);
+
+insert into paper values(55,'test','test',1505,5555);
+insert into paper values(56,'test','test',1505,5555);
+insert into paper values(57,'test','test',1505,5555);
+insert into paper values(58,'test','test',1505,5555);
+insert into paper values(59,'test','test',1505,5555);
+
+insert into paper values(60,'test','test',1505,5555);
+insert into paper values(61,'test','test',1505,5555);
+insert into paper values(62,'test','test',1505,5555);
+insert into paper values(63,'test','test',1505,5555);
+insert into paper values(64,'test','test',1505,5555);
+
+select * from paper where meeting_id = 1505;

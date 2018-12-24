@@ -6,7 +6,7 @@ def full_1024(data_):
 
 
 def get_rsa_key():
-    file_rsa = open('crypto/rsa_key.txt', 'r').readlines()
+    file_rsa = open('C:/Users/PC/PycharmProjects/bsu/cryptography/lab2/client/crypto/rsa_key.txt', 'r').readlines()
     public = file_rsa[0].split(' ')
     private = file_rsa[1].split(' ')
     public = (public[1], public[2])

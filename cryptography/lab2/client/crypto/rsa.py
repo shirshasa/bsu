@@ -47,24 +47,24 @@ def generate_keypair(p, q):
     return (e, n), (d, n)
 
 
-def encrypt(public_key, text):
+def encrypt(private_key, text):
     """
-    :param public_key: (e, n)
+    :param private_key: (e, n)
     :param text: text to encrypt
     :return: list of encrypted bytes
     """
-    e, n = public_key
+    e, n = private_key
     encrypted = [pow(ord(x), e, n) for x in text]
     return encrypted
 
 
-def decrypt(private_key, encrypted):
+def decrypt(public_key, encrypted):
     """
-    :param private_key: (d, n)
+    :param public_key: (d, n)
     :param encrypted: list of encrypted bytes
     :return: decrypted string
     """
-    d, n = private_key
+    d, n = public_key
     plain = [chr(int(pow(x, d, n))) for x in encrypted]
 
     return ''.join(plain)
@@ -144,5 +144,5 @@ if __name__ == "__main__":
     file = open('rsa_key.txt', 'w')
     file.write('public ' + str(e) + ' ' + str(n) + ' \n')
     file.write('private ' + str(d) + ' ' + str(n))
-    print('key length: ',len(str(e)))
+    print('key length: ', len(str(e)))
 
